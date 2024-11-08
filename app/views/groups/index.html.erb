@@ -1,0 +1,14 @@
+<h1>グループ一覧</h1>
+<% @group.each do |group| %>
+  <p>グループ画像</p>
+  <p>グループ名:
+  <%= link_to group_path(group.id) do %>
+    <%=group.name %>
+  <% end %>
+  </p>
+  <p>紹介文:<%= group.introduction %></p>
+  <p><%#= group.group_users.count %>メンバー</p>
+  <% if group.is_owned_by?(current_user) %>
+    <%= link_to "編集", edit_group_path(group.id) %>
+  <% end %>
+<% end %>
