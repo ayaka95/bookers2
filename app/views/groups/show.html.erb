@@ -1,0 +1,10 @@
+<h1>グループ詳細</h1>
+<p>グループ画像</p>
+<%= @group.name %></br>
+<%= @group.introduction %></br>
+<% if @group.is_owned_by?(current_user) %>
+  <%= link_to "編集", edit_group_path(@group.id) %>
+<% end %>
+<% unless @group.is_owned_by?(current_user) %>
+  <%#= link_to "グループに参加する", groups_path %>
+<% end %>
