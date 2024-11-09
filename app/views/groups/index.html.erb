@@ -7,7 +7,7 @@
   <% end %>
   </p>
   <p>紹介文:<%= group.introduction %></p>
-  <p><%= group.users.count %>メンバー</p>
+  <p><%= group.group_users.count %>メンバー</p>
   <% if group.is_owned_by?(current_user) %>
     <%= link_to "編集", edit_group_path(group.id) %>
   <% end %>
