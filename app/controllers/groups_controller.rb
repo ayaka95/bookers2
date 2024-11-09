@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @group = Group.all
+    @groups = Group.all
   end
 
   def edit
@@ -38,7 +38,7 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :introduction, :owner_id)
+    params.require(:group).permit(:name, :introduction)
   end
 
 end
